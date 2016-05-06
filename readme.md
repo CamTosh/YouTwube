@@ -24,6 +24,6 @@ pip install nomDuPackage
 
 ## Petite histoire
 
-J'ai dev le bot de 23h35 → 00h55 en étant dans un état d'évriété assez avancé pour écouter du Patrick Sebastien pendant le dev.
+J'ai dev le bot de 23h35 → 00h55 en étant dans un état d'ébriété assez avancé pour écouter du Patrick Sebastien pendant le dev.
 
 Voilà d'où l'idée est partie : [Tweet de @Alexxondre](https://twitter.com/Alexxondre/status/728699670122344448) 
