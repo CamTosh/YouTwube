@@ -2,7 +2,7 @@
 
 Bot Twitter écrit en Python, sans pretention oklm, qui répond à votre tweet une vidéo Youtube avec le texte de votre tweet.
 
-Je filtre le [@yotwbebot](https://twitter.com/Youtwubebo) dans la recherche de vidéo. Le code n'est pas compliqué du tout.
+Je filtre le [@youtwubebot](https://twitter.com/youtwubebot) dans la recherche de vidéo. Le code n'est pas compliqué du tout.
 
 # Requiairementesseuh
 
