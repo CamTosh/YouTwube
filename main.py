@@ -23,7 +23,7 @@ def reply(api, mention):
 
     ziguigui = '\u21AA'
     fleche = '\u2192'
-    reponse = ziguigui + " @" + user + fleche + " " + video
+    reponse = ziguigui + " @" + user + " " + fleche + " " + video
 
     last_tweet = api.user_timeline('YouTwubeBot')[0]
 
