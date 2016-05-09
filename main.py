@@ -2,7 +2,7 @@ import urllib.request
 import urllib.parse
 import re
 import tweepy
-
+from time import sleep
 
 def search(text):
 
@@ -21,14 +21,6 @@ def reply(api, mention):
 	user = mention.user.screen_name
 	api.update_status("Voilà la vidéo, @" + user + "-> " + video, id)
 
-
-def limit_handled(cursor):
-    while True:
-        try:
-            yield cursor.next()
-        except tweepy.RateLimitError:
-            time.sleep(15 * 60)
-
 if __name__ == '__main__':
 
 	consumer_key = ''
@@ -41,8 +33,14 @@ if __name__ == '__main__':
 
 	api = tweepy.API(auth)
 
-	mentions = api.mentions_timeline(count=1)
-	
-	for mention in mentions:
-		print(mention.user.name + " -> " + mention.text.replace("@YouTwubeBot", "").lower())
-		reply(api, mention)
+	while True:
+		try:
+			mentions = api.mentions_timeline(count=1)
+			for mention in mentions:
+				print(mention.user.name + " -> " + mention.text.replace("@YouTwubeBot", "").lower())
+				reply(api, mention)
+			sleep(60)
+		except:
+			rate = api.rate_limit_status()
+			print (rate['resources']['statuses']['/statuses/mentions_timeline'])
+			sleep(15 * 60)
