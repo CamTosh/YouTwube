@@ -4,6 +4,7 @@ import urllib.request
 import urllib.parse
 import re
 import tweepy
+import random
 from time import sleep
 
 
@@ -11,7 +12,7 @@ def search(text):
     query_string = urllib.parse.urlencode({"search_query": text})
     html_content = urllib.request.urlopen("http://www.youtube.com/results?" + query_string)
     search_results = re.findall(r'href=\"\/watch\?v=(.{11})', html_content.read().decode())
-    video = "http://www.youtube.com/watch?v=" + search_results[0]
+    video = "http://www.youtube.com/watch?v=" + search_results[random.randint(0, len(search_results) -1)]
 
     return video
 
